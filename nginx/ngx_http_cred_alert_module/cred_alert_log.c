@@ -37,9 +37,18 @@ void write_to_log(ngx_http_request_t *r, const char *username, const char *email
         return;
     }
 
+    // Convert ngx_str_t to null-terminated string for client IP
+    char client_ip[256];
+    size_t len = r->connection->addr_text.len;
+    if (len >= sizeof(client_ip)) {
+        len = sizeof(client_ip) - 1;
+    }
+    memcpy(client_ip, r->connection->addr_text.data, len);
+    client_ip[len] = '\0';
+
     fprintf(f, "[%s] %s - %s - %s - %s - %s - %s - %lu\n",
             timestamp,
-            r->connection->addr_text.data,
+            client_ip,
             host ? host : "-",
             method ? method : "-",
             uri ? uri : "-",
