@@ -11,7 +11,7 @@ if test -n "$ngx_module_link"; then
 
     . auto/module
 else
-    # The Old Waym
+    # The Old Way
     HTTP_MODULES="$HTTP_MODULES ngx_http_cred_alert_module"
     NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
                     $ngx_addon_dir/ngx_http_cred_alert_module.c \

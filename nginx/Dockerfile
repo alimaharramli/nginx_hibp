@@ -50,7 +50,6 @@ RUN ./configure \
 RUN mkdir -p /usr/local/nginx/logs && \
     touch /usr/local/nginx/logs/cred_alert.log && \
     chown -R nginx:nginx /usr/local/nginx && \
-    chmod -R 755 /usr/local/nginx && \
     chmod 644 /usr/local/nginx/logs/cred_alert.log
 
 # Expose ports
