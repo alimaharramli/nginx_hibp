@@ -10,7 +10,7 @@ services:
       - webnet
   nginx:
     build:
-      context: ../nginx  
+      context: ../  
     container_name: nginx_server
     ports:
       - "80:80"
