@@ -33,6 +33,7 @@
 | 📨 **Instant Alerts** | Webhook notifications for credential matches |
 | 📝 **Detailed Logging** | Logging for credential matches |
 | 🐳 **Docker Support** | Easy deployment with containers |
+| 📄 **Request Format Support** | Handles both form data and JSON request bodies |
 
 </div>
 
