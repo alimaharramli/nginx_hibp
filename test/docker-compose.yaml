@@ -1,0 +1,26 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./test_app
+    container_name: flask_app
+    ports:
+      - "5000:80"
+    networks:
+      - webnet
+  nginx:
+    build:
+      context: ../nginx  
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/logs:/usr/local/nginx/logs
+      - ./nginx/nginx.conf:/usr/local/nginx/conf/nginx.conf
+    networks:
+      - webnet
+    depends_on:
+      - web
+
+networks:
+  webnet:
