@@ -102,7 +102,7 @@ For more details about the k-anonymity implementation, see [Cloudflare's detaile
 For a quick test of the module:
 
    ```bash
-   cd test && docker compose up --build
+   cd test && mkdir -p nginx/logs && chmod 777 nginx/logs && docker compose up --build
    ```
 This will set up a testing environment with login-only demo app
 
